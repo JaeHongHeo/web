@@ -1,6 +1,3 @@
-/*
-https://gracefullight.github.io/2017/12/22/PWA-ServiceWorker-Web-Caching/
-*/
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
   '/main.js'
