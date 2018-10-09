@@ -14,3 +14,5 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+
+const messaging = firebase.messaging();
