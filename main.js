@@ -3,16 +3,16 @@
 https://gracefullight.github.io/2017/12/22/PWA-ServiceWorker-Web-Caching/
  */
 
-//if ('serviceWorker' in navigator) {
-//    console.log('Service Worker is supported');
-//    navigator.serviceWorker.register('/web/sw.js').then(function(reg) {
-//    console.log(':^)', reg);
-//    // TODO
-//
-//    }).catch(function(err) {
-//        console.log(':^(', err);
-//    });
-//}
+if ('serviceWorker' in navigator) {
+    console.log('Service Worker is supported');
+    navigator.serviceWorker.register('/web/sw.js').then(function(reg) {
+    console.log(':^)', reg);
+    // TODO
+
+    }).catch(function(err) {
+        console.log(':^(', err);
+    });
+}
 
 
 const messaging = firebase.messaging();
@@ -20,9 +20,9 @@ messaging.usePublicVapidKey('BKkhjdbpZ1KWj6PtPB9dJ-uqC8NATwf40fi0ORcCbAYIJSW7nid
 
     // test
     messaging.getToken().then(function(refreshedToken) {
-      console.log('Token refreshed. ' + refreshedToken);
+      console.log('getToken. ' + refreshedToken);
     }).catch(function(err) {
-      console.log('Unable to retrieve refreshed token ', err);
+      console.log('getToken fail', err);
       //showToken('Unable to retrieve refreshed token ', err);
     });
 
