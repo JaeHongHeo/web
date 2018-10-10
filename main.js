@@ -17,7 +17,7 @@ https://firebase.google.com/docs/cloud-messaging/
 //    });
 //}
 
-console.log("ver:11");
+console.log("ver:12");
 
 const messaging = firebase.messaging();
 messaging.usePublicVapidKey('BKkhjdbpZ1KWj6PtPB9dJ-uqC8NATwf40fi0ORcCbAYIJSW7nid7ndCXbUt1H3u7bCF32eqSFCixSApXvSMAS20');
