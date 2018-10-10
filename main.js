@@ -8,6 +8,13 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/web/sw.js').then(function(reg) {
     console.log(':^)', reg);
     // TODO
+    // test
+    messaging.getToken().then(function(refreshedToken) {
+      console.log('getToken. ' + refreshedToken);
+    }).catch(function(err) {
+      console.log('getToken fail', err);
+      //showToken('Unable to retrieve refreshed token ', err);
+    });
 
     }).catch(function(err) {
         console.log(':^(', err);
@@ -18,13 +25,6 @@ if ('serviceWorker' in navigator) {
 const messaging = firebase.messaging();
 messaging.usePublicVapidKey('BKkhjdbpZ1KWj6PtPB9dJ-uqC8NATwf40fi0ORcCbAYIJSW7nid7ndCXbUt1H3u7bCF32eqSFCixSApXvSMAS20');
 
-    // test
-    messaging.getToken().then(function(refreshedToken) {
-      console.log('getToken. ' + refreshedToken);
-    }).catch(function(err) {
-      console.log('getToken fail', err);
-      //showToken('Unable to retrieve refreshed token ', err);
-    });
 
   // IDs of divs that display Instance ID token UI or request permission UI.
   const tokenDivId = 'token_div';
