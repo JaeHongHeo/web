@@ -1,6 +1,9 @@
 /**
 서비스 워커
 https://gracefullight.github.io/2017/12/22/PWA-ServiceWorker-Web-Caching/
+
+Firebase push
+https://firebase.google.com/docs/cloud-messaging/
  */
 
 //if ('serviceWorker' in navigator) {
@@ -14,7 +17,7 @@ https://gracefullight.github.io/2017/12/22/PWA-ServiceWorker-Web-Caching/
 //    });
 //}
 
-console.log("ver:5");
+console.log("ver:6");
 
 const messaging = firebase.messaging();
 messaging.usePublicVapidKey('BKkhjdbpZ1KWj6PtPB9dJ-uqC8NATwf40fi0ORcCbAYIJSW7nid7ndCXbUt1H3u7bCF32eqSFCixSApXvSMAS20');
