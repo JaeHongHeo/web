@@ -6,9 +6,12 @@
 <body>
 <h1>Push Notification Test</h1>
 <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-messaging.js"></script>
-<link rel="manifest" href="/manifest.json">
+<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-messaging.js"></script>
+<link rel="manifest" href="/web/manifest.json">
 <script>
+var firebase = require("firebase/app");
+require("firebase/messaging");
+
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyBHuUXy6GHs4VGP5580MH8yDYC7TFMMz8Q",
