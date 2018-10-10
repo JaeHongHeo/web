@@ -18,7 +18,9 @@ if ('serviceWorker' in navigator) {
 
         console.log(':^)', reg);
         messaging.useServiceWorker(reg);
-        // TODO
+        // TODO 토큰 받는 것 까지 됨
+        // TODO firebase-messaging-sw.js, index.html 에 중복된거 지워도 되는건지
+        // TODO manifest.json 에는 왜 103953800507 값을 써야하나?
         // test
         messaging.getToken().then(function(refreshedToken) {
           console.log('getToken. ' + refreshedToken);
@@ -32,7 +34,7 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-console.log("ver:15");
+console.log("ver:16");
 
 //messaging.usePublicVapidKey('BKkhjdbpZ1KWj6PtPB9dJ-uqC8NATwf40fi0ORcCbAYIJSW7nid7ndCXbUt1H3u7bCF32eqSFCixSApXvSMAS20');
 
