@@ -6,30 +6,32 @@ Firebase push
 https://firebase.google.com/docs/cloud-messaging/
  */
 
-//if ('serviceWorker' in navigator) {
-//    console.log('Service Worker is supported');
-//    navigator.serviceWorker.register('/web/sw.js').then(function(reg) {
-//    console.log(':^)', reg);
-//    // TODO
-//
-//    }).catch(function(err) {
-//        console.log(':^(', err);
-//    });
-//}
+if ('serviceWorker' in navigator) {
+    console.log('Service Worker is supported');
+    navigator.serviceWorker.register('firebase-messaging-sw.js').then(function(reg) {
 
-console.log("ver:12");
+        console.log(':^)', reg);
+        messaging.useServiceWorker(reg);
+        // TODO
+        // test
+        messaging.getToken().then(function(refreshedToken) {
+          console.log('getToken. ' + refreshedToken);
+        }).catch(function(err) {
+          console.log('getToken fail', err);
+          //showToken('Unable to retrieve refreshed token ', err);
+        });
+
+    }).catch(function(err) {
+        console.log(':^(', err);
+    });
+}
+
+console.log("ver:14");
 
 const messaging = firebase.messaging();
 messaging.usePublicVapidKey('BKkhjdbpZ1KWj6PtPB9dJ-uqC8NATwf40fi0ORcCbAYIJSW7nid7ndCXbUt1H3u7bCF32eqSFCixSApXvSMAS20');
 
 
-    // test
-    messaging.getToken().then(function(refreshedToken) {
-      console.log('getToken. ' + refreshedToken);
-    }).catch(function(err) {
-      console.log('getToken fail', err);
-      //showToken('Unable to retrieve refreshed token ', err);
-    });
 
   // IDs of divs that display Instance ID token UI or request permission UI.
   const tokenDivId = 'token_div';
