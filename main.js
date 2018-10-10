@@ -11,7 +11,7 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('firebase-messaging-sw.js').then(function(reg) {
 
         console.log(':^)', reg);
-        messaging.useServiceWorker(reg);
+        // messaging.useServiceWorker(reg);
         // TODO
         // test
         messaging.getToken().then(function(refreshedToken) {
