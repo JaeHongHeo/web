@@ -14,8 +14,9 @@ https://gracefullight.github.io/2017/12/22/PWA-ServiceWorker-Web-Caching/
 //    });
 //}
 
+log.console("ver:1");
 
-const messaging = firebase.messaging();
+//const messaging = firebase.messaging();
 messaging.usePublicVapidKey('BKkhjdbpZ1KWj6PtPB9dJ-uqC8NATwf40fi0ORcCbAYIJSW7nid7ndCXbUt1H3u7bCF32eqSFCixSApXvSMAS20');
 
 
