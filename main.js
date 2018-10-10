@@ -18,6 +18,14 @@ https://gracefullight.github.io/2017/12/22/PWA-ServiceWorker-Web-Caching/
 const messaging = firebase.messaging();
 messaging.usePublicVapidKey('BKkhjdbpZ1KWj6PtPB9dJ-uqC8NATwf40fi0ORcCbAYIJSW7nid7ndCXbUt1H3u7bCF32eqSFCixSApXvSMAS20');
 
+    // test
+    messaging.getToken().then(function(refreshedToken) {
+      console.log('Token refreshed. ' + refreshedToken);
+    }).catch(function(err) {
+      console.log('Unable to retrieve refreshed token ', err);
+      //showToken('Unable to retrieve refreshed token ', err);
+    });
+
   // IDs of divs that display Instance ID token UI or request permission UI.
   const tokenDivId = 'token_div';
   const permissionDivId = 'permission_div';
@@ -43,6 +51,8 @@ messaging.usePublicVapidKey('BKkhjdbpZ1KWj6PtPB9dJ-uqC8NATwf40fi0ORcCbAYIJSW7nid
 
 
 messaging.requestPermission().then(function() {
+    // 알림 권한 요청 수락시 호출됨.
+    // 이미 수락된 상태면 다이얼로그 없이 호출되는 것 같음
   console.log('Notification permission granted.');
   // TODO(developer): Retrieve an Instance ID token for use with FCM.
   // ...
