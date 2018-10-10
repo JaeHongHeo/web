@@ -4,14 +4,20 @@ https://gracefullight.github.io/2017/12/22/PWA-ServiceWorker-Web-Caching/
 
 Firebase push
 https://firebase.google.com/docs/cloud-messaging/
+
+https://firebase.google.com/docs/cloud-messaging/js/receive?hl=ko
+
+https://css-tricks.com/implementing-push-notifications-setting-firebase/
  */
+
+const messaging = firebase.messaging();
 
 if ('serviceWorker' in navigator) {
     console.log('Service Worker is supported');
     navigator.serviceWorker.register('firebase-messaging-sw.js').then(function(reg) {
 
         console.log(':^)', reg);
-        // messaging.useServiceWorker(reg);
+        messaging.useServiceWorker(reg);
         // TODO
         // test
         messaging.getToken().then(function(refreshedToken) {
@@ -26,10 +32,9 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-console.log("ver:14");
+console.log("ver:15");
 
-const messaging = firebase.messaging();
-messaging.usePublicVapidKey('BKkhjdbpZ1KWj6PtPB9dJ-uqC8NATwf40fi0ORcCbAYIJSW7nid7ndCXbUt1H3u7bCF32eqSFCixSApXvSMAS20');
+//messaging.usePublicVapidKey('BKkhjdbpZ1KWj6PtPB9dJ-uqC8NATwf40fi0ORcCbAYIJSW7nid7ndCXbUt1H3u7bCF32eqSFCixSApXvSMAS20');
 
 
 
